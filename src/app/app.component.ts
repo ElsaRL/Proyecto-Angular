@@ -1,9 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-
-
 import axios from 'axios';
-//import { useSetState } from "use-setstate";
+
 
 
 
@@ -39,85 +37,35 @@ this.empresas=[];
 
     }
 
-//  public ObtencionEmpresa() {
-
-//  const tenant = "629679fcca02f7eaa9e761d1";
-    
-//  axios.get(`http://localhost:11081/tenants/${tenant}`)
-    
-//  .then((response) => {
-// console.log(typeof (response));
-// console.log(response);
-
-//  console.log(response.data.id);
-    
-
-// this.resultado = response.data.id;
-
-
-//  //this.Empresas=(response.data);
-
-
-//  this.Empresas = Object.values(this.resultado);
-
-
-    
-//  })
-    
-// .catch((error) => {
-    
-// console.log(error);
-    
-//  })
-    
-//  }
-    
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 public ObtencionEmpresa() {
 
-  const tenant = "629679fcca02f7eaa9e761d1"; //Aquí se debe cambiar a alguna "tenant" registrada en la base de datos
+  const tenant = "629679fcca02f7eaa9e761d1";
 
 
 
   axios.get(`http://localhost:11081/tenants/${tenant}`)
 
-      .then((response) => {
+  .then((response) => {
 
-          console.log(typeof (response));
+  console.log(typeof (response));
 
-          console.log(response);
-
-
-
-          console.log(response.data.name);
+  console.log(response);
 
 
 
-          this.resultado = response.data.name;
+  console.log(response.data.name);
 
-      })
 
-      .catch((error) => {
 
-          console.log(error);
+  this.resultado = response.data.name;
 
-      })
+  })
+
+  .catch((error) => {
+
+  console.log(error);
+
+  })
 
 }
 
@@ -128,8 +76,6 @@ public async ObtencionDeTodasLasEmpresas(){
   this.empresas = (await axios.get(`http://localhost:11081/tenants/`)).data;
 
 }
-
-
 
 
 
@@ -153,10 +99,6 @@ if(respuesta==null){
 
       this.MostrarAccount=respuesta.email+" "+respuesta.updatedAt;
  }
-
-
-
-
 
 
 }
